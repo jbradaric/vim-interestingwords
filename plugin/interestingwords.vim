@@ -178,7 +178,7 @@ function! s:buildColors()
   if (s:hasBuiltColors)
     return
   endif
-  if has('gui_running')
+  if has('gui_running') || (has('termguicolors') && &termguicolors)
     let ui = 'gui'
     let wordColors = g:interestingWordsGUIColors
   else
